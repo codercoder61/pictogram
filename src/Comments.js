@@ -14,7 +14,7 @@ const Comments = ({ checkNewComments }) => {
             {item.image ? (
                  <img
                    onLoad={handleImageLoad2}
-                   src={`http://localhost/api/${item.image}`}
+                   src={`https://pneuexpress.online/api/${item.image}`}
                    alt="Profile Preview"
                    style={{
                      marginLeft: '1px',
