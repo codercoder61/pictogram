@@ -27,7 +27,7 @@ function Home() {
             setGood4(true)
             setGood1(false)
           try {
-            await axios.post('http://localhost/api/auth2.php',{
+            await axios.post('https://pneuexpress.online/api/auth2.php',{
               email: email,  
                 captchaToken:captchaToken,
             });
