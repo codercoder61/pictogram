@@ -1363,12 +1363,14 @@ useEffect(() => {
 
 useEffect(() => {
   if (!loader2 && viss && msg.current) {
-    if (newMessagessRef.current && newMessagessRef.current.length !== 0) {
-      window.location.href = `#${newMessagessRef.current[newMessagessRef.current.length - 1].id}`;
+    const msgs = newMessagesRef.current;
+
+    if (msgs && msgs.length !== 0) {
+      window.location.href = `#${msgs[msgs.length - 1].id}`;
       setLoader2(false);
     }
   }
-}, [loader2, viss]); // no warning now
+}, [loader2, viss]);
   return (
     <>
     {spinner && <div className="spinner"></div>}
