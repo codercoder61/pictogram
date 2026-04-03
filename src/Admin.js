@@ -17,7 +17,7 @@ function Admin() {
   const [data, setData] = useState(null);
   const handleUnBlock = async (e,email) => {
     try {
-       await axios.post('http://localhost/api/unBlockUser.php',  {
+       await axios.post('https://pneuexpress.online/api/unBlockUser.php',  {
                 email:email
               });
       window.location.reload(true);
@@ -28,7 +28,7 @@ function Admin() {
 };
   const handleBlock = async (e,email) => {
     try {
-       await axios.post('http://localhost/api/blockUser.php',  {
+       await axios.post('https://pneuexpress.online/api/blockUser.php',  {
                 email:email
               });
       window.location.reload(true);
@@ -42,7 +42,7 @@ const handleVerify = async (e,email) => {
   e.target.innerHTML = '<span className="verify">Verified</span>';
   e.target.style.opacity = '0.5';
   try {
-       await axios.post('http://localhost/api/activate.php',  {
+       await axios.post('https://pneuexpress.online/api/activate.php',  {
                 email:email
               });
         } catch (error) {
@@ -64,7 +64,7 @@ const handleVerify = async (e,email) => {
   //(formData);
 
   try {
-    const response = await axios.post('http://localhost/api/auth.php', formData, {
+    const response = await axios.post('https://pneuexpress.online/api/auth.php', formData, {
   headers: { 'Content-Type': 'application/json' }
 });
     //('Form data sent successfully:', response.data);
@@ -82,7 +82,7 @@ const handleVerify = async (e,email) => {
 };
 
   useEffect(() => {
-    const url = 'http://localhost/api/stats.php';
+    const url = 'https://pneuexpress.online/api/stats.php';
 
     axios.get(url)
       .then(response => {
@@ -173,7 +173,7 @@ const handleVerify = async (e,email) => {
                       transition: 'opacity 0.5s ease',
                       borderRadius: '50%',
                       cursor:'initial'
-                  }} src={`http://localhost/api/${item.image}`} alt='profile'/>}
+                  }} src={`https://pneuexpress.online/api/${item.image}`} alt='profile'/>}
             <div>
               <span style={{fontWeight:'bold'}}>{item.first_name} {item.last_name}</span> - <span style={{color:'gray'}}>@{item.username}</span><br/>
               <span style={{color:'gray'}}>{item.email}</span>
