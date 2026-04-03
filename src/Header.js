@@ -179,7 +179,7 @@ function Header() {
         },
       });
       if(like.data===1){
-        window.location.href = `?target=send_${id}`
+         = `?target=send_${id}`
       }
       } catch (error) {
         console.error('Error:', error);
@@ -521,7 +521,7 @@ function Header() {
       setViss(!viss)
       setVisibleOverlay(true)
       if(newMessagess && newMessagess.length!==0){
-        window.location.href = `#${newMessagess[newMessagess.length-1].id}`
+         = `#${newMessagess[newMessagess.length-1].id}`
       }
      }
 const config = useMemo(() => ({
@@ -568,7 +568,7 @@ useEffect(() => {
     const data = { id_exp: res.data.response.id, username: username };
      if (!loader2 && viss && msg.current) {
       if (newMessagesRef.current && newMessagesRef.current.length !== 0) {
-  window.location.href = `#${newMessagesRef.current[newMessagesRef.current.length - 1].id}`;
+   = `#${newMessagesRef.current[newMessagesRef.current.length - 1].id}`;
   setLoader2(false);
 }
     }
@@ -1343,7 +1343,14 @@ useEffect(() => {
     inputRf.current.focus();
   }
 }, [newMessagess,viss]); // or just [viss]
-
+useEffect(() => {
+  if (!loader2 && viss && msg.current) {
+    if (newMessagess && newMessagess.length !== 0) {
+      window.location.href = `#${newMessagess[newMessagess.length - 1].id}`;
+      setLoader2(false);
+    }
+  }
+}, [loader2, viss]);
   return (
     <>
     {spinner && <div className="spinner"></div>}
