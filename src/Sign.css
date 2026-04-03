@@ -1,0 +1,59 @@
+#evr{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f9f9;
+}
+
+#from{
+    background-color: white;
+    width:33%;
+    border-radius: 7px;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+    padding-bottom: 20px;
+}
+
+#from input[type='text'],#from input[type='submit']{
+    border: 1px solid rgb(233, 231, 231);
+    padding-left: 15px;
+    font-size: 1.1em;
+    height: 45px;
+}
+
+#from input[type='radio']{
+    margin-left:20px;
+    margin-right:10px;
+
+}
+
+#from input[type='text']:focus,#from input[type='submit']:focus{
+    outline:3px solid #9bbff5;
+}
+
+#from input[type='radio']:focus{
+    outline:none;
+}
+
+a:visited{
+    color:rgb(74, 139, 252);
+    text-decoration: none;
+}
+a{
+    color:rgb(74, 139, 252);
+    text-decoration: none;
+}
+#log{
+    width:150px;
+    height: auto;
+    font-size:1.9em;
+    color:black;
+    margin:20px auto;
+    display: inline-block;
+    font-weight: bold;
+    font-family: "Rubik Vinyl", serif;
+}

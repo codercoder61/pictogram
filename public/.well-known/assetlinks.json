@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "app.vercel.social_network_ecru_ten.twa",
+        "sha256_cert_fingerprints": ["F5:63:7A:7E:E5:A2:7E:A0:0F:14:4F:6E:D3:77:9D:71:26:AD:97:4A:FF:42:8D:F2:46:55:1F:B6:C8:07:32:0C"]
+      }
+    }]

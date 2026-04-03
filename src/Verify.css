@@ -1,0 +1,64 @@
+#evr{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f9f9;
+}
+
+#from{
+    background-color: white;
+    width:33%;
+    border-radius: 7px;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+#from input[type='text'],#from input[type='submit']{
+    border: 1px solid rgb(233, 231, 231);
+    padding-left: 15px;
+    font-size: 1.1em;
+    height: 45px;
+}
+
+#from input[type='radio']{
+    margin-left:20px;
+    margin-right:10px;
+
+}
+
+#from input[type='text']:focus,#from input[type='submit']:focus{
+    outline:3px solid #9bbff5;
+}
+
+a:visited{
+    color:rgb(74, 139, 252);
+    text-decoration: none;
+}
+a{
+    color:rgb(74, 139, 252);
+    text-decoration: none;
+}
+
+.loadr {
+    border: 3px solid #f3f3f3; 
+    border-top: 3px solid #3498db; 
+    border-right: 3px solid #3498db; 
+
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 2s linear infinite;
+    margin:0px 20px;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  

@@ -1,0 +1,38 @@
+{
+  "short_name": "soc-net",
+  "name": "soc-net",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "description": "A Social Media Website named soc-net",
+  "orientation": "portrait",
+  "scope": "/",
+  "dir": "rtl",
+  "lang": "en",
+  "id": "my-unique-id",
+  "launch_handler": {
+    "action": "launch",
+    "parameters": {
+      "type": "web"
+    }
+  },
+    "categories": [
+    "productivity",
+    "utilities",
+    "business"
+  ],
+  "iarc_rating_id": "abc123xyz"
+}
