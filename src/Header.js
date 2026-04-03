@@ -1355,14 +1355,20 @@ useEffect(() => {
     inputRf.current.focus();
   }
 }, [newMessagess,viss]); // or just [viss]
+const newMessagessRef = useRef(newMessagess);
+
+useEffect(() => {
+  newMessagessRef.current = newMessagess;
+}, [newMessagess]);
+
 useEffect(() => {
   if (!loader2 && viss && msg.current) {
-    if (newMessagess && newMessagess.length !== 0) {
-      window.location.href = `#${newMessagess[newMessagess.length - 1].id}`;
+    if (newMessagessRef.current && newMessagessRef.current.length !== 0) {
+      window.location.href = `#${newMessagessRef.current[newMessagessRef.current.length - 1].id}`;
       setLoader2(false);
     }
   }
-}, [loader2, viss]);
+}, [loader2, viss]); // no warning now
   return (
     <>
     {spinner && <div className="spinner"></div>}
