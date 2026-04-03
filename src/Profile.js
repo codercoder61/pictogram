@@ -1381,29 +1381,6 @@ useEffect(() => {
 }, [newMessagess, msg, config]);
 
 
-useEffect(() => {
-  if (!msg.current) return;
-
-  observerRef.current = new MutationObserver((mutationsList) => {
-    mutationsList.forEach((mutation) => {
-      if (mutation.type === "childList") {
-        if (newMessagess?.length) {
-          const lastId = newMessagess[newMessagess.length - 1].id;
-          document
-            .getElementById(lastId)
-            ?.scrollIntoView({ behavior: "smooth" });
-        }
-      }
-    });
-  });
-
-  observerRef.current.observe(msg.current, config);
-
-  return () => {
-    observerRef.current?.disconnect();
-  };
-}, [newMessagess, msg, config]);
-
 const newMessagesRef = useRef(newMessagess);
 
 useEffect(() => {
