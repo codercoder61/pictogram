@@ -572,6 +572,12 @@ useEffect(() => {
   newMessagesRef.current = newMessagess;
 }, [newMessagess]);
   
+   useEffect(() => {
+  if (msg.current && observerRef.current) {
+    observerRef.current.observe(msg.current, config);
+  }
+}, [config, observerRef]);
+  
      useEffect(() => {
   setNoImage(false);
   setImage2(null);
@@ -585,11 +591,7 @@ useEffect(() => {
 }
     }
 
-    useEffect(() => {
-  if (msg.current && observerRef.current) {
-    observerRef.current.observe(msg.current, config);
-  }
-}, [config, observerRef]);
+   
     
  const fetch = async () => {
       try {
