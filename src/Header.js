@@ -167,7 +167,7 @@ function Header() {
   }}
 }
   
- const postComment = async (id, value, id_commented) => {
+ const postCommennt = async (id, value, id_commented) => {
   if (value !== "") {
     // Construct the data object
     const data = {
