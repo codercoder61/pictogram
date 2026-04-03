@@ -533,7 +533,7 @@ function Header() {
       setViss(!viss)
       setVisibleOverlay(true)
       if(newMessagess && newMessagess.length!==0){
-         = `#${newMessagess[newMessagess.length-1].id}`
+       window.location.href  = `#${newMessagess[newMessagess.length-1].id}`
       }
      }
 const config = useMemo(() => ({
