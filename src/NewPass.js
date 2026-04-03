@@ -23,7 +23,7 @@ function Home() {
     }else{
       setGood1(false)
       try {
-       const res = await fetch("http://localhost/api/update_password.php", {
+       const res = await fetch("https://pneuexpress.online/api/update_password.php", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: new URLSearchParams({ token, password: pass })
