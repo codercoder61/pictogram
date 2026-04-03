@@ -16,7 +16,7 @@ function Home() {
      const getUserData = async (email) => {
         const data = { input: email }; 
         try {
-          res = await axios.post('http://localhost/api/getUserData.php', data, {
+          res = await axios.post('https://pneuexpress.online/api/getUserData.php', data, {
             headers: {
               'Content-Type': 'application/json',
             },
