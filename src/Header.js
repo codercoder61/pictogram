@@ -167,25 +167,37 @@ function Header() {
   }}
 }
   
-  const postCommennt = async (id,value,id_commented)=>{
-    let daa = null
-    if(value!==""){
-      daa = {id_commented:id_commented,id_liker:res.data.response.id,id_post:id,content:value}; 
-    if(daa!==null){
+ const postComment = async (id, value, id_commented) => {
+  if (value !== "") {
+    // Construct the data object
+    const data = {
+      id_commented: id_commented,
+      id_liker: res.data.response.id, // Make sure 'res' exists in this scope
+      id_post: id,
+      content: value
+    };
+
     try {
-      const like = await axios.post('https://pneuexpress.online/api/addComment.php', daa, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      if(like.data===1){
-         = `?target=send_${id}`
+      const response = await axios.post(
+        'https://pneuexpress.online/api/addComment.php',
+        data,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+
+      // Check response from the server
+      if (response.data === 1) {
+        // You probably want to redirect or update something
+        window.location.href = `?target=send_${id}`; // Fixed syntax
       }
-      } catch (error) {
-        console.error('Error:', error);
-      }
-      }}
+    } catch (error) {
+      console.error('Error:', error);
     }
+  }
+};
 
   const [noImage,setNoImage] = useState(false)
 
