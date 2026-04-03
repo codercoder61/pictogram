@@ -51,7 +51,7 @@ function Header() {
       } 
 
     try {
-      await axios.post('http://localhost/api/add_msg.php', data, {
+      await axios.post('https://pneuexpress.online/api/add_msg.php', data, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -92,7 +92,7 @@ function Header() {
     let daa
     daa = {id_liker:res.data.response.id,id_post:id,id_liked:id_liked}; 
     try {
-      await axios.post('http://localhost/api/addLike.php', daa, {
+      await axios.post('https://pneuexpress.online/api/addLike.php', daa, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -108,7 +108,7 @@ function Header() {
     let daa
     daa = {id_liker:res.data.response.id,id_post:id}; 
     try {
-      await axios.post('http://localhost/api/removeLike.php', daa, {
+      await axios.post('https://pneuexpress.online/api/removeLike.php', daa, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -141,7 +141,7 @@ function Header() {
       daa = {id_commented:id_commented,id_liker:res.data.response.id,id_post:id,content:value}; 
       if(daa!==null){
     try {
-      await axios.post('http://localhost/api/addComment.php', daa, {
+      await axios.post('https://pneuexpress.online/api/addComment.php', daa, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -152,7 +152,7 @@ function Header() {
 
   checkNewCommennt = setInterval(async () => {
   try {
-    checkNewComment = await axios.post('http://localhost/api/checkNewComments.php', data, {
+    checkNewComment = await axios.post('https://pneuexpress.online/api/checkNewComments.php', data, {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -173,7 +173,7 @@ function Header() {
       daa = {id_commented:id_commented,id_liker:res.data.response.id,id_post:id,content:value}; 
     if(daa!==null){
     try {
-      const like = await axios.post('http://localhost/api/addComment.php', daa, {
+      const like = await axios.post('https://pneuexpress.online/api/addComment.php', daa, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -207,7 +207,7 @@ function Header() {
   }
 
   try {
-    const responses = await axios.post('http://localhost/api/addNewPost.php', formData23);
+    const responses = await axios.post('https://pneuexpress.online/api/addNewPost.php', formData23);
     if (responses.data.success) {
       setSpinner(false)
       window.location.reload(true);
@@ -222,7 +222,7 @@ function Header() {
     let dat  
     dat = {id:id_post};
       try {
-        await axios.post('http://localhost/api/deletePost.php', dat, {
+        await axios.post('https://pneuexpress.online/api/deletePost.php', dat, {
           headers: {
           'Content-Type': 'application/json',
           },
@@ -268,7 +268,7 @@ function Header() {
     data = { id_suiveur:res.response.data.id,id_suivi:res.data.response.id }; 
     }
     try {
-      await axios.post('http://localhost/api/unfollow.php', data, {
+      await axios.post('https://pneuexpress.online/api/unfollow.php', data, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -306,7 +306,7 @@ function Header() {
     const data = { input: e.target.value }; 
 
       try {
-        const ras = await axios.post('http://localhost/api/searchUser.php', data, {
+        const ras = await axios.post('https://pneuexpress.online/api/searchUser.php', data, {
           headers: {
             'Content-Type': 'application/json',
           },
@@ -390,7 +390,7 @@ function Header() {
   
         const data = { email: localStorage.getItem("email") , input: username }; 
         try {
-          res = await axios.post('http://localhost/api/getUserData.php', data, {
+          res = await axios.post('https://pneuexpress.online/api/getUserData.php', data, {
             headers: {
               'Content-Type': 'application/json',
             },
@@ -400,7 +400,7 @@ function Header() {
             let sa = 0
             const da = { email: localStorage.getItem("email") ,id:follower.id }; 
             try {
-              sa = await axios.post('http://localhost/api/checkFollow.php', da, {
+              sa = await axios.post('https://pneuexpress.online/api/checkFollow.php', da, {
                 headers: {
                   'Content-Type': 'application/json',
                 },
@@ -415,7 +415,7 @@ function Header() {
             let sad = 0
             const dad = { email: localStorage.getItem("email") ,id:follower.id }; 
             try {
-              sad = await axios.post('http://localhost/api/checkFollow.php', dad, {
+              sad = await axios.post('https://pneuexpress.online/api/checkFollow.php', dad, {
                 headers: {
                   'Content-Type': 'application/json',
                 },
@@ -449,7 +449,7 @@ function Header() {
         let resp
         const data = { email: localStorage.getItem("email") , input: username }; 
         try {
-          resp = await axios.post('http://localhost/api/getUserData.php', data, {
+          resp = await axios.post('https://pneuexpress.online/api/getUserData.php', data, {
             headers: {
               'Content-Type': 'application/json',
             },
@@ -458,7 +458,7 @@ function Header() {
             let sa = 0
             const da = { email: localStorage.getItem("email") ,id:follower.id }; 
             try {
-              sa = await axios.post('http://localhost/api/checkFollow.php', da, {
+              sa = await axios.post('https://pneuexpress.online/api/checkFollow.php', da, {
                 headers: {
                   'Content-Type': 'application/json',
                 },
@@ -473,7 +473,7 @@ function Header() {
             let sad = 0
             const dad = { email: localStorage.getItem("email") ,id:follower.id }; 
             try {
-              sad = await axios.post('http://localhost/api/checkFollow.php', dad, {
+              sad = await axios.post('https://pneuexpress.online/api/checkFollow.php', dad, {
                 headers: {
                   'Content-Type': 'application/json',
                 },
@@ -572,7 +572,7 @@ useEffect(() => {
  const fetch = async () => {
       try {
         const newMessagess2 = await axios.post(
-          'http://localhost/api/checkNewMessage3.php',
+          'https://pneuexpress.online/api/checkNewMessage3.php',
           data,
           { headers: { 'Content-Type': 'application/json' } }
         );
@@ -660,7 +660,7 @@ useEffect(() => {
       let data = {id_post:id_post}; 
       checkNewCommennt = setInterval(async () => {
         try {
-          checkNewComment = await axios.post('http://localhost/api/checkNewComments.php', data, {
+          checkNewComment = await axios.post('https://pneuexpress.online/api/checkNewComments.php', data, {
             headers: {
               'Content-Type': 'application/json',
             },
@@ -710,7 +710,7 @@ useEffect(() => {
         setVisibleOverlay(true)
         document.body.style.overflow = "hidden"
         try {
-            await axios.get('http://localhost/api/removeFlagOne.php', {
+            await axios.get('https://pneuexpress.online/api/removeFlagOne.php', {
               headers: {
                 'Content-Type': 'application/json',
               },
@@ -742,7 +742,7 @@ useEffect(() => {
         setVisibleOverlay(true)
         document.body.style.overflow = "hidden"
         try {
-          await axios.get('http://localhost/api/removeFlagTwo.php', {
+          await axios.get('https://pneuexpress.online/api/removeFlagTwo.php', {
             headers: {
               'Content-Type': 'application/json',
             },
@@ -770,7 +770,7 @@ useEffect(() => {
 
           }else{
       try {
-        const response = await axios.post('http://localhost/api/updateProfile.php', formData, {
+        const response = await axios.post('https://pneuexpress.online/api/updateProfile.php', formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
@@ -798,7 +798,7 @@ useEffect(() => {
           (async () => {
             const data = { email: localStorage.getItem("email"),id:res.data.response.id };
             try {
-               const rsa = await axios.post('http://localhost/api/getUsers2.php', data, {
+               const rsa = await axios.post('https://pneuexpress.online/api/getUsers2.php', data, {
                 headers: {
                   'Content-Type': 'application/json',
                 },
@@ -825,7 +825,7 @@ useEffect(() => {
               id: res.data.response.id 
             };
     
-            const notigp = await axios.post('http://localhost/api/getNotifications.php', data, {
+            const notigp = await axios.post('https://pneuexpress.online/api/getNotifications.php', data, {
               headers: { 'Content-Type': 'application/json' }
             });
     
@@ -848,7 +848,7 @@ useEffect(() => {
               id: resl.data.response.id 
             };
       
-            const notgp = await axios.post('http://localhost/api/getMessages.php', data, {
+            const notgp = await axios.post('https://pneuexpress.online/api/getMessages.php', data, {
               headers: { 'Content-Type': 'application/json' }
             });
             setNotgp(notgp.data);
@@ -866,7 +866,7 @@ useEffect(() => {
               id: resl.data.response.id 
             };
       
-            const notgp = await axios.post('http://localhost/api/getMessages.php', data, {
+            const notgp = await axios.post('https://pneuexpress.online/api/getMessages.php', data, {
               headers: { 'Content-Type': 'application/json' }
             });
             setNotgp(notgp.data);
@@ -1225,7 +1225,7 @@ up.current.style.display='none'
     const follow = async (e,id) => {
         const data = { id_suiveur: res.data.response.id,id_suivi:id }; 
         try {
-          await axios.post('http://localhost/api/follow.php', data, {
+          await axios.post('https://pneuexpress.online/api/follow.php', data, {
             headers: {
               'Content-Type': 'application/json',
             },
@@ -1246,7 +1246,7 @@ up.current.style.display='none'
             let rees = await getUserDataa(localStorage.getItem("email"));  
             let data = {id:rees.data.response.id}; 
             try {
-              rresponses = await axios.post('http://localhost/api/posts.php', data, {
+              rresponses = await axios.post('https://pneuexpress.online/api/posts.php', data, {
                 headers: {
                   'Content-Type': 'application/json',
                 },
@@ -1272,7 +1272,7 @@ up.current.style.display='none'
             let rees = await getUserDataa(localStorage.getItem("email"));  
             let data = {id:rees.data.response.id}; 
             try {
-              rresponses = await axios.post('http://localhost/api/retrievePosts.php', data, {
+              rresponses = await axios.post('https://pneuexpress.online/api/retrievePosts.php', data, {
                 headers: {
                   'Content-Type': 'application/json',
                 },
@@ -1316,7 +1316,7 @@ up.current.style.display='none'
     const data = { id_exp: res.data.response.id }; 
     const checkNewMessagess = setInterval(async () => {
       try {
-        await axios.post('http://localhost/api/checkNewMessages2.php', data, {
+        await axios.post('https://pneuexpress.online/api/checkNewMessages2.php', data, {
           headers: {
             'Content-Type': 'application/json',
           },
@@ -1349,7 +1349,7 @@ useEffect(() => {
     <div style={{display:'flex',justifyContent:'space-around',alignItems:'center'}}>
       {!loader2 && newMessagess!==null && (<img onLoad={handleImageLoad2}
 loading="lazy"
-            src={`http://localhost/api/${newMessagess[0].pic}`} 
+            src={`https://pneuexpress.online/api/${newMessagess[0].pic}`} 
             alt="Preview" 
             style={{transition: 'opacity 0.5s ease',
 marginRight:'10px',objectFit: 'cover',width:'45px',height:'45px',borderRadius:'50%'}}
@@ -1405,7 +1405,7 @@ marginRight:'10px',objectFit: 'cover',width:'45px',height:'45px',borderRadius:'5
           <div style={{display:'flex',marginBottom:'10px',justifyContent:'space-between'}} key={index}>
             <div style={{display:'flex'}}>
               {item.image!=null && <img onLoad={handleImageLoad2} loading="lazy"
-                  src={`http://localhost/api/${item.image}`} 
+                  src={`https://pneuexpress.online/api/${item.image}`} 
                   alt="Preview" 
                   style={{
                       marginLeft: '1px',
@@ -1448,7 +1448,7 @@ marginRight:'10px',objectFit: 'cover',width:'45px',height:'45px',borderRadius:'5
             </div>
             <div className="dropdown">
             {!image2 && formData.image && <img onLoad={handleImageLoad2} loading="lazy" ref={popup44}
-            src={`http://localhost/api/${formData.image}`} 
+            src={`https://pneuexpress.online/api/${formData.image}`} 
             alt="Preview" 
             style={{ marginLeft:'7px',transition: 'opacity 0.5s ease',
 marginBottom:'6px',maxWidth: '100%',marginRight:'15px', height: '35px' ,width:'35px',verticalAlign:'middle',borderRadius:'50%'}} 
@@ -1492,7 +1492,7 @@ marginBottom:'6px',maxWidth: '100%',marginRight:'15px', height: '35px' ,width:'3
             width: '35px',
             verticalAlign: 'middle',
             borderRadius: '50%'
-        }} src={`http://localhost/api/${item.profile_pic}`} alt="Profile" />
+        }} src={`https://pneuexpress.online/api/${item.profile_pic}`} alt="Profile" />
         }
         <div>
           <Link style={{display:'inline-block',padding:'0',color:'black',fontSize:'1em'}} to={`/profile?username=${item.username}`}><p style={{fontWeight:'500'}}>{item.name}</p></Link> 
@@ -1529,7 +1529,7 @@ marginBottom:'6px',maxWidth: '100%',marginRight:'15px', height: '35px' ,width:'3
             width: '35px',
             verticalAlign: 'middle',
             borderRadius: '50%'
-        }} src={`http://localhost/api/${item.profile_pic}`} alt="Profile" />
+        }} src={`https://pneuexpress.online/api/${item.profile_pic}`} alt="Profile" />
         }
         <div>
           <p onClick={()=>{openPost2(item.username);closeNav2();}} style={{display:'inline-block',padding:'0',color:'black',fontSize:'1em',fontWeight:'500'}}>{item.name}</p> 
@@ -1562,7 +1562,7 @@ marginBottom:'6px',maxWidth: '100%',marginRight:'15px', height: '35px' ,width:'3
       {!image2 && good4 && (
         <div style={{border:'1px solid rgb(200,200,200)',padding:'2px',margin:'30px 20px',width:'150px',height:'auto'}}>
           <img onLoad={handleImageLoad2} loading="lazy"
-            src={`http://localhost/api/${formData.image}`} 
+            src={`https://pneuexpress.online/api/${formData.image}`} 
             alt="Preview2" 
             style={{ opacity: 0,transition: 'opacity 0.5s ease',maxWidth: '100%', height: 'auto' }} 
           />
@@ -1635,7 +1635,7 @@ marginBottom:'6px',maxWidth: '100%',marginRight:'15px', height: '35px' ,width:'3
                 <div>
             {item.profile_pic===null && <i id="profile11" className="dropbtn fa-solid fa-user"></i>}
             {item.profile_pic!==null && <img onLoad={handleImageLoad2} loading="lazy"
-                src={`http://localhost/api/${item.profile_pic}`} 
+                src={`https://pneuexpress.online/api/${item.profile_pic}`} 
                 alt="Preview" 
                 style={{
                     opacity:'0',
@@ -1660,7 +1660,7 @@ marginBottom:'6px',maxWidth: '100%',marginRight:'15px', height: '35px' ,width:'3
             </div>
             </div>
             <img loading="lazy" onLoad={handleImageLoad2}
-                src={`http://localhost/api/${item.photo}`} 
+                src={`https://pneuexpress.online/api/${item.photo}`} 
                 alt="Preview" 
                 style={{
                   opacity:'0',
@@ -1717,7 +1717,7 @@ marginBottom:'6px',maxWidth: '100%',marginRight:'15px', height: '35px' ,width:'3
         <div style={{display:'flex',flexDirection:'column',padding:'2px',margin:'25px 30px',verticalAlign:'top'}}>
         <div style={{display:'flex'}}>
         {formData.image && (<img onLoad={handleImageLoad2} loading="lazy"
-            src={`http://localhost/api/${formData.image}`} 
+            src={`https://pneuexpress.online/api/${formData.image}`} 
             alt="Preview" 
             style={{ transition: 'opacity 0.5s ease',maxWidth: '100%',marginRight:'15px', width:'60px',verticalAlign:'top',height:'60px',borderRadius:'50%'}} 
           />)}
@@ -1739,7 +1739,7 @@ marginBottom:'6px',maxWidth: '100%',marginRight:'15px', height: '35px' ,width:'3
         <div style={{display:'flex',marginBottom:'10px',justifyContent:'space-between'}} key={index}>
           <div style={{display:'flex'}}>
             {item.profile_pic!==null && <img onLoad={handleImageLoad2} loading="lazy"
-                src={`http://localhost/api/${item.profile_pic}`} 
+                src={`https://pneuexpress.online/api/${item.profile_pic}`} 
                 alt="Preview" 
                 style={{
                     transition: 'opacity 0.5s ease',
@@ -1796,7 +1796,7 @@ marginBottom:'6px',maxWidth: '100%',marginRight:'15px', height: '35px' ,width:'3
               {itm.image ? (
                 <img
                   onLoad={handleImageLoad}
-                  src={`http://localhost/api/${itm.image}`}
+                  src={`https://pneuexpress.online/api/${itm.image}`}
                   alt="Profile Preview"
                   style={{
                     opacity: isLoaded ? 1 : 0,
@@ -1842,7 +1842,7 @@ marginBottom:'6px',maxWidth: '100%',marginRight:'15px', height: '35px' ,width:'3
         <img
           onLoad={handleImageLoad2}
           loading="lazy"
-          src={`http://localhost/api/${formData.image}`}
+          src={`https://pneuexpress.online/api/${formData.image}`}
           alt="Preview"
           id="image30"
           style={{
@@ -1912,7 +1912,7 @@ marginBottom:'6px',maxWidth: '100%',marginRight:'15px', height: '35px' ,width:'3
                 <img
                   onLoad={handleImageLoad2}
                   loading="lazy"
-                  src={`http://localhost/api/${item.image}`}
+                  src={`https://pneuexpress.online/api/${item.image}`}
                   alt="Profile Preview"
                   style={{
                     marginLeft: '1px',
@@ -1969,7 +1969,7 @@ marginBottom:'6px',maxWidth: '100%',marginRight:'15px', height: '35px' ,width:'3
                  <img
                  onLoad={handleImageLoad2}
                 
-                   src={`http://localhost/api/${item.image}`}
+                   src={`https://pneuexpress.online/api/${item.image}`}
                    alt="Profile Preview"
                    loading="lazy"
                    style={{
@@ -2027,7 +2027,7 @@ marginBottom:'6px',maxWidth: '100%',marginRight:'15px', height: '35px' ,width:'3
              <div style={{ display: 'flex' }}>
                {item.image ? (
                  <img
-                   src={`http://localhost/api/${item.image}`}
+                   src={`https://pneuexpress.online/api/${item.image}`}
                    alt="Profile Preview"
                     onLoad={handleImageLoad2}
                     loading="lazy"
@@ -2080,7 +2080,7 @@ marginBottom:'6px',maxWidth: '100%',marginRight:'15px', height: '35px' ,width:'3
   }} alt="pzaeklpaz"
   onLoad={handleImageLoad2}
   loading="lazy"
-  src={`http://localhost/api/${item.photo}`}
+  src={`https://pneuexpress.online/api/${item.photo}`}
 />
 </div>
                   <div className="senegal">
@@ -2088,7 +2088,7 @@ marginBottom:'6px',maxWidth: '100%',marginRight:'15px', height: '35px' ,width:'3
                       <div style={{display:'flex',alignItems:'center'}}>
                       {item.profile_pic===null && <i id="profile111" className="dropbtn fa-solid fa-user"></i>}
             {item.profile_pic!==null && <img onLoad={handleImageLoad2} loading="lazy"
-                src={`http://localhost/api/${item.profile_pic}`} 
+                src={`https://pneuexpress.online/api/${item.profile_pic}`} 
                 alt="Preview" 
                 style={{
                     marginLeft: '1px',
@@ -2141,7 +2141,7 @@ marginBottom:'6px',maxWidth: '100%',marginRight:'15px', height: '35px' ,width:'3
             
             <img onLoad={handleImageLoad2} loading="lazy"
                 onClick={()=>openComments(item.id_post)}
-                src={`http://localhost/api/${item.photo}`} 
+                src={`https://pneuexpress.online/api/${item.photo}`} 
                 alt="Preview" 
                 style={{
                     opacity: 0,
