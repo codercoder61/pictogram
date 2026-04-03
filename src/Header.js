@@ -580,7 +580,7 @@ useEffect(() => {
     const data = { id_exp: res.data.response.id, username: username };
      if (!loader2 && viss && msg.current) {
       if (newMessagesRef.current && newMessagesRef.current.length !== 0) {
-   = `#${newMessagesRef.current[newMessagesRef.current.length - 1].id}`;
+ window.location.href = `#${newMessagesRef.current[newMessagesRef.current.length - 1].id}`;
   setLoader2(false);
 }
     }
