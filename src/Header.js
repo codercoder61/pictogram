@@ -554,7 +554,12 @@ useEffect(() => {
   };
 }, [newMessagess, msg, config]);
 
+const newMessagesRef = useRef([]);
 
+useEffect(() => {
+  newMessagesRef.current = newMessagess;
+}, [newMessagess]);
+  
      useEffect(() => {
   setNoImage(false);
   setImage2(null);
@@ -562,10 +567,10 @@ useEffect(() => {
   if (res && username !== "") {
     const data = { id_exp: res.data.response.id, username: username };
      if (!loader2 && viss && msg.current) {
-      if (newMessagess && newMessagess.length !== 0) {
-        window.location.href = `#${newMessagess[newMessagess.length - 1].id}`;
-        setLoader2(false);
-      }
+      if (newMessagesRef.current && newMessagesRef.current.length !== 0) {
+  window.location.href = `#${newMessagesRef.current[newMessagesRef.current.length - 1].id}`;
+  setLoader2(false);
+}
     }
 
     
