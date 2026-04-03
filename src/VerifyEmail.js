@@ -13,7 +13,7 @@ function VerifyEmail() {
 
   useEffect(() => {
     if (token) {
-      axios.get(`http://localhost/api/verify-email.php?token=${token}`)
+      axios.get(`https://pneuexpress.online/api/verify-email.php?token=${token}`)
         .then(res => setMessage(res.data))
         .catch(() => setMessage("Verification failed"));
     }
