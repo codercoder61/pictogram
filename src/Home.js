@@ -73,7 +73,7 @@ const location = useLocation();
         setGood2(true)
       }else{
         try {
-          const response = await axios.post('http://localhost/api/auth.php', formData);
+          const response = await axios.post('https://pneuexpress.online/api/auth.php', formData);
           if(response.data.response1 && response.data.response1.success===2){
               localStorage.setItem('isAdmin', "admin");
               navigate('/admin');
