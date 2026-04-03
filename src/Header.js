@@ -585,6 +585,11 @@ useEffect(() => {
 }
     }
 
+    useEffect(() => {
+  if (msg.current && observerRef.current) {
+    observerRef.current.observe(msg.current, config);
+  }
+}, [config, observerRef]);
     
  const fetch = async () => {
       try {
