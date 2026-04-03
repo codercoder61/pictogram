@@ -105,7 +105,7 @@ const handleCaptchaChange = (token) => {
     }
     else{
       try {
-        const response = await axios.post('http://localhost/api/sign_up.php', formData);
+        const response = await axios.post('https://pneuexpress.online/api/sign_up.php', formData);
 
         if(response.data === ""){
           handleRedirect()
