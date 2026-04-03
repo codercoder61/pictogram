@@ -1404,12 +1404,18 @@ useEffect(() => {
   };
 }, [newMessagess, msg, config]);
 
+const newMessagesRef = useRef(newMessagess);
 
+useEffect(() => {
+  newMessagesRef.current = newMessagess;
+}, [newMessagess]);
   
    useEffect(() => {
   if (!loader2 && viss && msg.current) {
-    if (newMessagess && newMessagess.length !== 0) {
-      window.location.href = `#${newMessagess[newMessagess.length - 1].id}`;
+    const msgs = newMessagesRef.current;
+
+    if (msgs && msgs.length !== 0) {
+      window.location.href = `#${msgs[msgs.length - 1].id}`;
       setLoader2(false);
     }
   }
