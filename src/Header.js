@@ -1756,7 +1756,7 @@ marginBottom:'6px',maxWidth: '100%',marginRight:'15px', height: '35px' ,width:'3
     <div id="follow">
     
         <div style={{display:'flex',flexDirection:'column',padding:'2px',margin:'25px 30px',verticalAlign:'top'}}>
-        <div style={{display:'flex',alignitems: 'center'}}>
+        <div style={{display:'flex',alignItems: 'center'}}>
         {formData.image && (<img onLoad={handleImageLoad2} loading="lazy"
             src={`https://pneuexpress.online/api/${formData.image}`} 
             alt="Preview" 
