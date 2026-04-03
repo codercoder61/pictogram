@@ -413,6 +413,9 @@ if (q !== null) {
         },
       });
       setContent("")
+      if(newMessagess && newMessagess.length!==0){
+       window.location.href  = `#${newMessagess[newMessagess.length-1].id}`
+      }
     } catch (error) {
       console.error('Error:', error);
     }
