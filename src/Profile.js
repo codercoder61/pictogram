@@ -1416,6 +1416,7 @@ useEffect(() => {
       if (Array.isArray(response.data)) {
         setNewMessagess(response.data);
         setLoader2(false);
+        window.location.href  = `#${newMessagess[newMessagess.length-1].id}`
       } else {
         console.error("Response data is not an array:", response.data);
       }
