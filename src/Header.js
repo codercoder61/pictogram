@@ -607,18 +607,7 @@ useEffect(() => {
         setNewMessagess(newMessagess2.data);
         setLoader2(false);
 
-        if (newMessagess2.data.length > 0) {
-          const lastMessage =
-            newMessagess2.data[newMessagess2.data.length - 1];
-
-          window.location.href = `#${lastMessage.id}`;
-        }
-      } else {
-        console.error(
-          "Response data is not an array:",
-          newMessagess2.data
-        );
-      }
+       
 
         if (Array.isArray(newMessagess2.data) && newMessagess2.data.length !== 0) {
           setLoader2(false);
