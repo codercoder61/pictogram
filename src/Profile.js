@@ -1403,33 +1403,49 @@ useEffect(() => {
 useEffect(() => {
   if (!(rs && username2 !== "")) return;
 
-  const data = { id_exp: rs.data.response.id, username: username2 };
+  const data = {
+    id_exp: rs.data.response.id,
+    username: username2,
+  };
 
-  const fetch = async () => {
+  const fetchMessages = async () => {
     try {
       const response = await axios.post(
         "https://pneuexpress.online/api/checkNewMessage3.php",
         data,
-        { headers: { "Content-Type": "application/json" } }
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
       );
 
       if (Array.isArray(response.data)) {
         setNewMessagess(response.data);
         setLoader2(false);
-        window.location.href  = `#${newMessagess[newMessagess.length-1].id}`
+
+        if (response.data.length > 0) {
+          const lastMessage =
+            response.data[response.data.length - 1];
+
+          window.location.href = `#${lastMessage.id}`;
+        }
       } else {
-        console.error("Response data is not an array:", response.data);
+        console.error(
+          "Response data is not an array:",
+          response.data
+        );
       }
     } catch (error) {
       console.error("API error:", error);
     }
   };
 
-  const interval = setInterval(fetch, 2000);
+  fetchMessages(); // optional: fetch immediately
+  const interval = setInterval(fetchMessages, 2000);
 
   return () => clearInterval(interval);
-
-}, [username2]);
+}, [username2, rs]);
 
 useEffect(() => {
   if (msg.current && observerRef.current) {
