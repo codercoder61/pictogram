@@ -606,7 +606,7 @@ useEffect(() => {
         if (Array.isArray(newMessagess2.data)) {
         setNewMessagess(newMessagess2.data);
         setLoader2(false);
-
+        }
        
 
         if (Array.isArray(newMessagess2.data) && newMessagess2.data.length !== 0) {
