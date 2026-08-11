@@ -401,26 +401,39 @@ if (q !== null) {
    
   };
   const addMsg = async (e) => {
-    e.preventDefault()
-    let data
+  e.preventDefault();
 
-    data = { id_exp:resc.data.response.id,id_dest:rs.data.response.id,content:content }; 
-
-    try {
-      await axios.post('https://pneuexpress.online/api/add_msg.php', data, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      setContent("")
-      if(newMessagess && newMessagess.length!==0){
-       window.location.href  = `#${newMessagess[newMessagess.length-1].id}`
-      }
-    } catch (error) {
-      console.error('Error:', error);
-    }
-   
+  const data = {
+    id_exp: resc.data.response.id,
+    id_dest: rs.data.response.id,
+    content: content,
   };
+
+  try {
+    const response = await axios.post(
+      "https://pneuexpress.online/api/add_msg.php",
+      data,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    setContent("");
+
+    // If add_msg.php returns the newly created message
+    if (response.data?.id) {
+      window.location.href = `#${response.data.id}`;
+    } else if (newMessagess?.length > 0) {
+      // Fallback to the latest existing message
+      const lastMessage = newMessagess[newMessagess.length - 1];
+      window.location.href = `#${lastMessage.id}`;
+    }
+  } catch (error) {
+    console.error("Error:", error);
+  }
+};
   const block = async () => {
     const data = { id_blocked:res.data.response.id,id_blocker:rs.data.response.id }; 
     try {
