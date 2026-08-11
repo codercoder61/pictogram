@@ -1318,7 +1318,13 @@ up.current.style.display='none'
             setFollowing(false)
             setVisibleOverlay(false)
           }, []);
+useEffect(() => {
+  if (newMessagess?.length > 0) {
+    const lastMessage = newMessagess[newMessagess.length - 1];
 
+    window.location.hash = lastMessage.id;
+  }
+}, [newMessagess]);
 
   const closePost2 = ()=>{
     clearInterval(checkNewMessages)
