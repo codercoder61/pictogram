@@ -434,6 +434,17 @@ if (q !== null) {
     console.error("Error:", error);
   }
 };
+
+
+  useEffect(() => {
+  if (newMessagess?.length > 0) {
+    const lastMessage = newMessagess[newMessagess.length - 1];
+
+    window.location.hash = lastMessage.id;
+  }
+}, [newMessagess]);
+
+  
   const block = async () => {
     const data = { id_blocked:res.data.response.id,id_blocker:rs.data.response.id }; 
     try {
