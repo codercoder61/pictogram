@@ -603,17 +603,22 @@ useEffect(() => {
           { headers: { 'Content-Type': 'application/json' } }
         );
 
-        if (newMessagess2.data) {
-          console.log(newMessagess2.data)
-          if (Array.isArray(newMessagess2.data)) {
-            setNewMessagess(newMessagess2.data);
-            setLoader2(false);
-          } else {
-            console.error("Response data is empty or not an array:", newMessagess2.data);
-          }
-        } else {
-          console.error("API response did not contain expected data:", newMessagess2);
+        if (Array.isArray(response.data)) {
+        setNewMessagess(response.data);
+        setLoader2(false);
+
+        if (response.data.length > 0) {
+          const lastMessage =
+            response.data[response.data.length - 1];
+
+          window.location.href = `#${lastMessage.id}`;
         }
+      } else {
+        console.error(
+          "Response data is not an array:",
+          response.data
+        );
+      }
 
         if (Array.isArray(newMessagess2.data) && newMessagess2.data.length !== 0) {
           setLoader2(false);
