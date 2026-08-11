@@ -1437,18 +1437,7 @@ useEffect(() => {
         setNewMessagess(response.data);
         setLoader2(false);
 
-        if (response.data.length > 0) {
-          const lastMessage =
-            response.data[response.data.length - 1];
-
-          window.location.href = `#${lastMessage.id}`;
-        }
-      } else {
-        console.error(
-          "Response data is not an array:",
-          response.data
-        );
-      }
+        
     } catch (error) {
       console.error("API error:", error);
     }
