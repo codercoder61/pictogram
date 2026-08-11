@@ -603,20 +603,20 @@ useEffect(() => {
           { headers: { 'Content-Type': 'application/json' } }
         );
 
-        if (Array.isArray(response.data)) {
-        setNewMessagess(response.data);
+        if (Array.isArray(newMessagess2.data)) {
+        setNewMessagess(newMessagess2.data);
         setLoader2(false);
 
-        if (response.data.length > 0) {
+        if (newMessagess2.data.length > 0) {
           const lastMessage =
-            response.data[response.data.length - 1];
+            newMessagess2.data[newMessagess2.data.length - 1];
 
           window.location.href = `#${lastMessage.id}`;
         }
       } else {
         console.error(
           "Response data is not an array:",
-          response.data
+          newMessagess2.data
         );
       }
 
