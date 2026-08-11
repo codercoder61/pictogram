@@ -1445,7 +1445,7 @@ useEffect(() => {
   const interval = setInterval(fetchMessages, 2000);
 
   return () => clearInterval(interval);
-}, [username2, rs]);
+}, [username2]);
 
 useEffect(() => {
   if (msg.current && observerRef.current) {
