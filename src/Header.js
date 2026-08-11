@@ -595,28 +595,28 @@ useEffect(() => {
 
    
     
- const fetch = async () => {
-      try {
-        const newMessagess2 = await axios.post(
-          'https://pneuexpress.online/api/checkNewMessage3.php',
-          data,
-          { headers: { 'Content-Type': 'application/json' } }
-        );
-
-        if (Array.isArray(newMessagess2.data)) {
-        setNewMessagess(newMessagess2.data);
-        setLoader2(false);
-        }
-       
-
-        if (Array.isArray(newMessagess2.data) && newMessagess2.data.length !== 0) {
-          setLoader2(false);
-        }
-      } catch (error) {
-        console.error('Error occurred during API call:', error);
+const fetch = async () => {
+  try {
+    const response = await axios.post(
+      "https://pneuexpress.online/api/checkNewMessage3.php",
+      data,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
       }
-    };
-  
+    );
+
+    if (Array.isArray(response.data)) {
+      setNewMessagess(response.data);
+      setLoader2(false);
+    } else {
+      console.error("Response data is not an array:", response.data);
+    }
+  } catch (error) {
+    console.error("Error occurred during API call:", error);
+  }
+};
    
 
     // Polling API call
