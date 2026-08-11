@@ -1436,7 +1436,7 @@ useEffect(() => {
       if (Array.isArray(response.data)) {
         setNewMessagess(response.data);
         setLoader2(false);
-
+      }
         
     } catch (error) {
       console.error("API error:", error);
