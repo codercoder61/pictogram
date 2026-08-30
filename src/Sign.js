@@ -5,6 +5,10 @@ import {useState} from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import ReCAPTCHA from "react-google-recaptcha";
+import { useRef } from "react";
+
+const captchaRef = useRef(null);
+
 function Home() {
   const [captchaToken, setCaptchaToken] = useState(null);
   const navigate = useNavigate();
@@ -120,7 +124,11 @@ const handleCaptchaChange = (token) => {
         
       } catch (error) {
         console.error('Error sending form data:', error);
-      }
+      } finally {
+  // Reset CAPTCHA after every submission
+  captchaRef.current?.reset();
+  setCaptchaToken(null);
+}
     }
    
     
@@ -152,10 +160,17 @@ const handleCaptchaChange = (token) => {
             <input autocomplete="off" value={formData.password} onChange={handleChange6} style={{width:'90%',margin:'5px 20px'}} type="password" placeholder='password' name='password'/>
             {good5 && <span style={{margin:'10px 20px',display:'inline-block',color:'rgb(243, 10, 100)',border:'1px solid rgb(203, 184, 190)',padding:'15px 10px',backgroundColor:'#f8d7da',width:'90%'}}>password is not given</span>}
               <div style={{ display: "flex", justifyContent: "center" }}>
-                  <ReCAPTCHA
-                    sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
-                    onChange={handleCaptchaChange}
-                  />
+                 <ReCAPTCHA
+                  ref={captchaRef}
+                  sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
+                  onChange={(token) => {
+                      setCaptchaToken(token);
+                      setFormData(prev => ({
+                          ...prev,
+                          captchaToken: token
+                      }));
+                  }}
+              />
                 </div>
             <div style={{margin:'10px 20px',display:'flex',alignItems:'center',justifyContent:'space-between'}}><input autocomplete="off" style={{padding:'5px 10px',backgroundColor:'#0b5ed7',color:'white',borderRadius:'5px'}} type="submit" value="Sign Up" name="sign"/><Link to='/' style={{textDecoration:'none'}} >Already have an account ?</Link></div>
         </form>
