@@ -7,9 +7,10 @@ import { useNavigate } from 'react-router-dom';
 import ReCAPTCHA from "react-google-recaptcha";
 import { useRef } from "react";
 
-const captchaRef = useRef(null);
 
 function Home() {
+const captchaRef = useRef(null);
+  
   const [captchaToken, setCaptchaToken] = useState(null);
   const navigate = useNavigate();
   const handleRedirect = () => {
