@@ -31,10 +31,10 @@ const captchaRef = useRef(null);
   const [good5,setGood5] = useState(false)
   const [good30,setGood30] = useState(false)
   const [good31,setGood31] = useState(false)
-const handleCaptchaChange = (token) => {
-        setCaptchaToken(token)
-      setFormData(prev => ({ ...prev, captchaToken: token }));
-    }
+// const handleCaptchaChange = (token) => {
+//         setCaptchaToken(token)
+//       setFormData(prev => ({ ...prev, captchaToken: token }));
+//     }
   const handleChange1 = (e)=>{
     const { name, value } = e.target;
       setFormData(prevState => ({
