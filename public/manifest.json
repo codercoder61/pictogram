@@ -1,6 +1,6 @@
 {
-  "short_name": "soc-net",
-  "name": "soc-net",
+  "short_name": "pictogram",
+  "name": "pictogram",
   "icons": [
     {
       "src": "logo.png",
@@ -17,7 +17,7 @@
   "background_color": "#ffffff",
   "display": "standalone",
   "theme_color": "#000000",
-  "description": "A Social Media Website named soc-net",
+  "description": "A Social Media Website named pictogram",
   "orientation": "portrait",
   "scope": "/",
   "dir": "rtl",
